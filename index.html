@@ -4,7 +4,7 @@
     <title>Jen Lamere </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">o
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 
 </head>
@@ -24,8 +24,6 @@
 	padding-top: 4%;
 	padding-left: 15%;
 	color: #04756F;
-	overflow: hidden;
-	display: inline-block;
 }
 #footer{
 	background-color: #04756F;
@@ -34,22 +32,9 @@
 	bottom:0px;
 	width:100%;
 }
-#aboutMe,
-#projects,
-#news {
-	float: left;
-	color: #04756F;
-	padding: 10px;
-
-}
-#content {
-	padding: 20px;
-}
 .subsection{
   padding-top: 2%;
 	font-size: 20px;
-	width: 500px;
-	font-size: 24px;
 }
 .row-fluid{
 	padding-top: 4%;
@@ -72,68 +57,65 @@ a:hover {
   color: #000;
 }
 
+
 </style>
-<body onload = "onloadFunc()">
+<body>
 <center>
 <div id= "title">
 Jen Lamere
 <div id = "subtitle">
-<div id = "aboutMe" onclick="switchMe('me')"> <a> Me  </a></div>
-<div id = "projects" onclick = "switchMe('projects')"> <a> Projects </a> </div>
-<div id = "news" onclick = "switchMe('news')"> <a> News </a></div>
-<!--<div id = "wic" onclick = "switchMe('wic')"> <a> Resources </a></div> -->
+18. NH. Hacker.
+</div>
+</div>
 
-</div>
-</div>
-<div id = "content">
+<div class="row-fluid">
+  <div class="span4">
+   	<img src="img/news.png"alt="Responsive image" class= "img-circle	img-responsive"  width="150" height="auto">
+      <div class = "contentPlaceholder">
+      	<br>
+          News
+          <div class = "subSection">
+          <a href = "https://thenetawards.com/vote/talent/jennie-lamere/"> Net Award Nomination </a> <br>
+          <a href = "http://blog.ted.com/2013/12/19/teen-hacker-jennie-lamere/"> Ted </a><br>
+          <a href = "http://evolver.fm/2013/06/03/insiders-perspective-the-jennie-lamere-phenomenon/"> Evolver.FM</a> <br>
+          <a href = "http://style.mtv.com/2013/05/13/jennie-lamere-twivo/"> MTV </a><br>
+          <a href = "http://www.huffingtonpost.com/2013/05/08/twivo-tv-spoiler-blocking-twitter_n_3238664.html"> Huffington Post </a>
+          </div>
+      </div>
+  </div>
+
+   <div class="span4">
+      <img src="img/me.png"alt="Responsive image" class= "img-circle	img-responsive"  width="150" height="auto">
+      <div class = "contentPlaceholder">
+          <br>
+          Me
+          <div class = "subSection">
+					Hi! I'm <div class = "emphasis"> Jen Lamere,</div> I'm 19, a hiker, a swimmer and a software engineer at RIT. While engineering is my major, <div class = "emphasis"> hacking is my passion.</div> I'm also a Twitter intern, and devote time to help teens and women get interested <div class = "emphasis"> building cool things.</div> <br>  I'm on
+          <a href = "https://twitter.com/imjen"> twitter, </a> <a href = "https://github.com/jlamere"> github, </a> and am avaliable by <a href = "mailto:jennielamere@gmail.com"> email. </a><br> <div class = "emphasis"> #shipit</div>
+          </div>
+      </div>
+  </div>
+
+   <div class="span4">
+      	<img src="img/projects.png"alt="Responsive image" class= "img-circle	img-responsive"  width="150" height="auto">
+      <div class = "contentPlaceholder">
+      <br>
+         Projects
+         <div class = "subSection">
+         <a href = "http://jlamere.github.io/jbiebs/"> HLSBDSS </a> <br>
+         <a href = "http://jlamere.github.io/twivo/"> Twivo </a> <br>
+         <a href = "http://futref.me"> FutureReference </a> <br>
+         <a href = "https://github.com/jlamere/cinemusic"> Cinemusic </a><br>
+
+
+      </div>
 </div>
 </center>
 <div id ="footer">
 <center>
-
 </center>
 </div>
 </body>
 <script type="text/javascript">
-var lastClicked = "me";
-
-function onloadFunc() {
-$('#content').prepend('<img src="img/me.png"alt="Responsive image" class= "img-circle	img-responsive"  width="0" height="auto" id = "image">')
-$('#image').animate({width: '300px'});
-$('#content').append(getMeContent());
-
-}
-
-function switchMe(id) {
-if(lastClicked === id){
-	return;
-}
-$('#content').empty();
-$('#content').prepend('<img src="img/' + id + '.png"alt="Responsive image" class= "img-circle	img-responsive" width: "0px" height="auto" id = "image">');
-lastClicked = id;
-if (lastClicked == "me"){
-	$('#content').append(getMeContent());
-}
-else if (lastClicked == "projects"){
-		$('#content').append(getProjectContent());
-	}
-else if (lastClicked == "news"){
-	$('#content').append(getNewsContent());
-	}
-}
-
-
-function getMeContent(){
-
-	return '<div class = "subSection"> Hi! I am <div class = "emphasis"> Jen Lamere,</div> I am 19, a hiker, a swimmer and a software engineer at RIT. While engineering is my major, <div class = "emphasis"> hacking is my passion.</div> I am also a Twitter intern, and devote time to help teens and women get interested <div class = "emphasis"> building cool things.</div> <br>  I am on <a href = "https://twitter.com/imjen"> twitter, </a> <a href = "https://github.com/jlamere"> github, </a> and am avaliable by <a href = "mailto:jennielamere@gmail.com"> email. </a><br> <div class = "emphasis"> #shipit</div> </div>'
-	}
-function getProjectContent(){
-	return  '<div class = "subSection"><a href = "http://jlamere.github.io/jbiebs/"> HLSBDS</a> <br><a href = "http://jlamere.github.io/twivo/"> Twivo </a> <br><a href = "http://futref.me"> FutureReference </a> <br><a href = "https://github.com/jlamere/cinemusic"> Cinemusic </a><br></div>'
-}
-function getNewsContent(){
-	return '<div class = "subSection"><a href = "https://thenetawards.com/vote/talent/jennie-lamere/"> Net Award Nomination </a> <br> <a href = "http://blog.ted.com/2013/12/19/teen-hacker-jennie-lamere/"> Ted </a><br><a href = "http://evolver.fm/2013/06/03/insiders-perspective-the-jennie-lamere-phenomenon/"> Evolver.FM</a> <br><a href = "http://style.mtv.com/2013/05/13/jennie-lamere-twivo/"> MTV </a><br><a href = "http://www.huffingtonpost.com/2013/05/08/twivo-tv-spoiler-blocking-twitter_n_3238664.html"> Huffington Post </a></div>'
-}
- </script>
-	</html>
-
-
+         </script>
+		</html>
